@@ -24,14 +24,12 @@ def create_producto():
     nombre = request.json['nombre']
     cantidad = request.json['cantidad']
     reserva = request.json['reserva']
-    precio_compra = request.json['precio_compra']
     id_categoria = request.json['id_categoria']
 
     new_producto = Producto(
         nombre=nombre,
         cantidad=cantidad,
         reserva=reserva,
-        precio_compra=precio_compra,
         id_categoria=id_categoria
     )
 
