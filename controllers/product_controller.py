@@ -88,3 +88,17 @@ def get_products_by_category(id_categoria):
         return jsonify(result)
     except Exception as e:
         return jsonify({"error": str(e)}), 500
+
+# Función para verificar si hay productos en reserva para una categoría
+def categoria_tiene_productos_en_reserva(id_categoria):
+    try:
+        productos_en_reserva = Producto.query.filter(
+            Producto.id_categoria == id_categoria,
+            Producto.reserva >= Producto.cantidad, 
+            Producto.reserva != 0
+        ).first()
+
+        return productos_en_reserva is not None
+    except Exception as e:
+        print("Error al verificar productos en reserva:", str(e))
+        return False

@@ -14,8 +14,8 @@ login_manager.login_view = "login"
 CORS(app)
 
 # Configurar la base de datos
-#app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:root@localhost/casa_pastas'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://uw2gofboizl3oog2:jakRmwiYp6PXetSMyUBf@bnqjztqkeqodt9qdumiw-mysql.services.clever-cloud.com:3306/bnqjztqkeqodt9qdumiw'
+#app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:root@localhost/casa_pastas'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
