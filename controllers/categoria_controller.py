@@ -14,7 +14,7 @@ def get_categorias():
 
         # Verificar si alguna categoría tiene productos en reserva
         for categoria in all_categorias:
-            productos_en_reserva = Producto.query.filter_by(id_categoria=categoria.id).filter(and_(Producto.reserva >= 0, Producto.reserva >= Producto.cantidad)).first()
+            productos_en_reserva = Producto.query.filter_by(id_categoria=categoria.id).filter(and_(Producto.reserva > 0, Producto.reserva >= Producto.cantidad)).first()
             if productos_en_reserva:
                 categoria.tiene_productos_en_reserva = True
             else:
