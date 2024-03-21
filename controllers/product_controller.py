@@ -63,6 +63,7 @@ def update_producto(id):
     producto.nombre = request.json['nombre']
     producto.cantidad = request.json['cantidad']
     producto.reserva = request.json['reserva']
+    producto.precio_venta = request.json['precio_venta']
     producto.id_categoria = request.json['id_categoria']
 
     db.session.commit()

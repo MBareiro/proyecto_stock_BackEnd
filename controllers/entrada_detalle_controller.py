@@ -68,10 +68,11 @@ def create_entrada_detalle(id_entrada):
         for detalle in detalles_data:
             id_producto = detalle['id_producto']
             cantidad = detalle['cantidad']
-            
+            precio_venta = detalle['precio_venta']
             producto = Producto.query.get(id_producto)
             if producto:
                 producto.cantidad += cantidad
+                producto.precio_venta = precio_venta
                 db.session.commit()
             else:
                 return jsonify({'message': f'Producto con ID {id_producto} no encontrado'}), 404
