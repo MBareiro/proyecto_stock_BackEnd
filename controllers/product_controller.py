@@ -41,7 +41,7 @@ def create_producto():
         new_producto.reserva = reserva
     else:
         new_producto.reserva = 0
-    if id_categoria is not None:
+    if id_categoria is not None and id_categoria != "":
         new_producto.id_categoria = id_categoria
     else:
         new_producto.id_categoria = 0
